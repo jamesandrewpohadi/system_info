@@ -5,6 +5,8 @@ import 'platform/memory.dart' as pm;
 import 'platform/operating_system.dart';
 import 'platform/user.dart';
 import 'platform/userspace.dart';
+import 'platform/device.dart';
+import 'platform/chipset.dart';
 import 'processor_architecture.dart';
 
 abstract class SysInfo {
@@ -60,6 +62,10 @@ abstract class SysInfo {
   ///     print(SysInfo.processors.first.vendor);
   ///     => GenuineIntel
   static final List<CoreInfo> cores = getCores();
+
+  static final String deviceName = getDeviceName();
+
+  static final String chipset = getChipset();
 
   /// Returns the path of user home directory.
   ///
